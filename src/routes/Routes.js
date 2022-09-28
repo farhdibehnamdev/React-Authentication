@@ -1,16 +1,14 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Dashboard from "../components/dashboard/Dashboard";
 import SignIn from "../components/signin/SignIn";
-const Routes = function () {
+const AppRoutes = function () {
   return (
     <Router>
-      <Route path="/">
-        <Dashboard />
-      </Route>
-      <Route path="/login">
-        <SignIn />
-      </Route>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/login" element={<SignIn />} />
+      </Routes>
     </Router>
   );
 };
-export default Routes;
+export default AppRoutes;
