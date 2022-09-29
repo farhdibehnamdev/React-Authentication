@@ -1,26 +1,38 @@
 import React from "react";
 import {
   CardContent,
-  Typography,
-  CardActions,
-  Button,
-  TextField,
+  CardHeader,
+  Avatar,
   Box,
   Card as CardMui,
 } from "@mui/material";
-const Card = function () {
-  return (
-    <CardMui sx={{ minWidth: 600 }}>
-      <CardContent>
-        <Box>
-          <TextField id="outlined-basic" label="Outlined" variant="outlined" />
+import cardStyle from "./Card.style";
+import LockOpenIcon from "@mui/icons-material/LockOpen";
 
-          <Button size="small">Learn More</Button>
-        </Box>
-        <TextField id="outlined-basic" label="Outlined" variant="outlined" />
-      </CardContent>
-      <CardActions></CardActions>
-    </CardMui>
+const Card = function ({ children }) {
+  return (
+    <Box sx={cardStyle()}>
+      <CardMui variant="outlined" sx={{ minWidth: 600 }} className="cardMui">
+        <CardHeader
+          sx={{ backgroundColor: "#F5F8FA" }}
+          avatar={
+            <Avatar
+              sx={{
+                bgcolor: "blue",
+                width: 65,
+                height: 65,
+                textAlign: "center",
+              }}
+              aria-label="login-icon"
+            >
+              <LockOpenIcon fontSize="large" />
+            </Avatar>
+          }
+        ></CardHeader>
+        <hr />
+        <CardContent>{children}</CardContent>
+      </CardMui>
+    </Box>
   );
 };
 export default Card;
