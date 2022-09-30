@@ -11,8 +11,9 @@ const SignUp = function () {
   const [errorMessage, setErrorMessage] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
+  const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
   const navigate = useNavigate();
-  const loginHandler = function () {
+  const signupHandler = function () {
     console.log("login handler");
   };
   return (
@@ -20,7 +21,7 @@ const SignUp = function () {
       item
       sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
     >
-      <Card>
+      <Card title="Sign Up">
         <Grid item className="mb">
           <TextField
             fullWidth
@@ -43,8 +44,8 @@ const SignUp = function () {
         <Grid item className="mb">
           <TextField
             fullWidth
-            onChange={(e) => setPasswordValue(e.target.value)}
-            value={passwordValue}
+            onChange={(e) => setConfirmPasswordValue(e.target.value)}
+            value={confirmPasswordValue}
             label="Confirm Password"
             type="password"
             variant="outlined"
@@ -55,12 +56,16 @@ const SignUp = function () {
             size="large"
             variant="contained"
             fullWidth
-            disabled={!emailValue || !passwordValue}
-            onClick={loginHandler}
+            disabled={
+              !emailValue ||
+              !passwordValue ||
+              passwordValue !== confirmPasswordValue
+            }
+            onClick={() => signupHandler()}
             color="success"
             endIcon={<LoginIcon />}
           >
-            Sign In
+            Sign Up
           </Button>
         </Grid>
 
@@ -75,7 +80,7 @@ const SignUp = function () {
             Don't have an account ? Sign Up
           </Button>
         </Grid>
-        <Grid item className="mb">
+        {/* <Grid item className="mb">
           <Button
             size="large"
             variant="outlined"
@@ -86,10 +91,10 @@ const SignUp = function () {
           >
             Forgot your password ?
           </Button>
-        </Grid>
+        </Grid> */}
       </Card>
     </Grid>
   );
 };
 
-export default SignIn;
+export default SignUp;
