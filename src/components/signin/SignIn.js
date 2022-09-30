@@ -19,7 +19,7 @@ const SignIn = function () {
       item
       sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
     >
-      <Card>
+      <Card title="Sign In">
         <Grid item className="mb">
           <TextField
             fullWidth
@@ -45,9 +45,9 @@ const SignIn = function () {
             variant="contained"
             fullWidth
             disabled={!emailValue || !passwordValue}
-            onClick={loginHandler}
+            onClick={() => loginHandler()}
             color="success"
-            endIcon={<LoginIcon />}
+            endIcon={<HowToRegIcon />}
           >
             Sign In
           </Button>
@@ -56,12 +56,12 @@ const SignIn = function () {
         <Grid item className="mb">
           <Button
             fullWidth
-            onClick={() => navigate("/signup")}
+            onClick={() => navigate("/signin")}
             size="large"
             variant="contained"
-            endIcon={<HowToRegIcon />}
+            endIcon={<LoginIcon />}
           >
-            Don't have an account ? Sign Up
+            Already have an account ? Log In
           </Button>
         </Grid>
         <Grid item className="mb">
