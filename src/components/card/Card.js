@@ -9,26 +9,11 @@ import {
 import cardStyle from "./Card.style";
 import LockOpenIcon from "@mui/icons-material/LockOpen";
 
-const Card = function ({ children }) {
+const Card = function ({ title, children }) {
   return (
     <Box sx={cardStyle()}>
       <CardMui variant="outlined" sx={{ minWidth: 600 }} className="cardMui">
-        <CardHeader
-          sx={{ backgroundColor: "#F5F8FA" }}
-          avatar={
-            <Avatar
-              sx={{
-                bgcolor: "blue",
-                width: 65,
-                height: 65,
-                textAlign: "center",
-              }}
-              aria-label="login-icon"
-            >
-              <LockOpenIcon fontSize="large" />
-            </Avatar>
-          }
-        ></CardHeader>
+        <CardHeader sx={{ backgroundColor: "#F5F8FA" }} title={title} />
         <hr />
         <CardContent>{children}</CardContent>
       </CardMui>
