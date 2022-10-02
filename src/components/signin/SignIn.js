@@ -6,13 +6,21 @@ import Card from "../card/Card";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import LoginIcon from "@mui/icons-material/Login";
 import LockResetIcon from "@mui/icons-material/LockReset";
+import axios from "axios";
+import useToken from "../../hooks/useToken";
 const SignIn = function () {
+  const [token, setToken] = useToken();
   const [errorMessage, setErrorMessage] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const navigate = useNavigate();
-  const loginHandler = function () {
-    console.log("login handler");
+  const loginHandler = async function () {
+    const response = await axios.post("http://localhost:8080/api/signin", {
+      email: emailValue,
+      password: passwordValue,
+    });
+    const { token } = response.data;
+    setToken(token);
   };
   return (
     <Grid
