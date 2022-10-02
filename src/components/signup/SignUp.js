@@ -1,20 +1,28 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Grid, Button, TextField } from "@mui/material";
+import axios from "axios";
+import useToken from "../../hooks/useToken";
 import { toast } from "react-toastify";
 import Card from "../card/Card";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import LoginIcon from "@mui/icons-material/Login";
-import LockResetIcon from "@mui/icons-material/LockReset";
 
 const SignUp = function () {
+  const [token, setToken] = useToken();
   const [errorMessage, setErrorMessage] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
   const navigate = useNavigate();
-  const signupHandler = function () {
-    console.log("login handler");
+  const signupHandler = async function () {
+    const response = await axios.post("http://localhost:8080/api/signup", {
+      email: emailValue,
+      password: passwordValue,
+    });
+    const { token } = response.data;
+    setToken(token);
+    navigate("/profile");
   };
   return (
     <Grid
