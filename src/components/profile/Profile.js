@@ -1,5 +1,5 @@
 import { Button, Grid, TextField } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
 import useToken from "../../hooks/useToken";
@@ -16,6 +16,17 @@ const Profile = function () {
   const [lastNameValue, setLastNameValue] = useState(info.lastName || "");
   const [bioValue, setBioValue] = useState(info.bio || "");
   const navigate = useNavigate();
+  useEffect(() => {
+    if (!isVerified) {
+      toast.error(
+        "You won't be able to make any changes until verify your email",
+        {
+          position: toast.POSITION.TOP_CENTER,
+        }
+      );
+    }
+  });
+
   const saveChangesHandler = async function () {
     try {
       const response = await axios.put(
@@ -47,6 +58,17 @@ const Profile = function () {
   };
   return (
     <>
+      <ToastContainer
+        position="top-center"
+        autoClose={10000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
       <Grid
         item
         sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
