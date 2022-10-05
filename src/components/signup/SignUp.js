@@ -9,7 +9,7 @@ import HowToRegIcon from "@mui/icons-material/HowToReg";
 import LoginIcon from "@mui/icons-material/Login";
 
 const SignUp = function () {
-  const [token, setToken] = useToken();
+  const [, setToken] = useToken();
   const [errorMessage, setErrorMessage] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
@@ -20,9 +20,10 @@ const SignUp = function () {
       email: emailValue,
       password: passwordValue,
     });
+    console.log("response :::", response);
     const { token } = response.data;
     setToken(token);
-    navigate("/profile");
+    navigate("/verify-email");
   };
   return (
     <Grid
@@ -80,26 +81,14 @@ const SignUp = function () {
         <Grid item className="mb">
           <Button
             fullWidth
-            onClick={() => navigate("/signup")}
+            onClick={() => navigate("/signin")}
             size="large"
             variant="contained"
             endIcon={<HowToRegIcon />}
           >
-            Don't have an account ? Sign Up
+            Already have an account ? Log In
           </Button>
         </Grid>
-        {/* <Grid item className="mb">
-          <Button
-            size="large"
-            variant="outlined"
-            fullWidth
-            color="error"
-            onClick={() => navigate("/forgot-password")}
-            endIcon={<LockResetIcon />}
-          >
-            Forgot your password ?
-          </Button>
-        </Grid> */}
       </Card>
     </Grid>
   );
