@@ -1,5 +1,5 @@
 import { Grid } from "@mui/material";
-import SignUp from "../components/signin/SignUp";
+import SignUp from "../components/signup/SignUp";
 
 const SignUpPage = function () {
   return (
