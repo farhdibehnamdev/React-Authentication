@@ -16,11 +16,11 @@ const SignUp = function () {
   const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
   const navigate = useNavigate();
   const signupHandler = async function () {
-    const response = await axios.post("http://localhost:8080/api/signup", {
+    axios.defaults.baseURL = "http://localhost:8080";
+    const response = await axios.post("/api/signup", {
       email: emailValue,
       password: passwordValue,
     });
-    console.log("response :::", response);
     const { token } = response.data;
     setToken(token);
     navigate("/verify-email");
