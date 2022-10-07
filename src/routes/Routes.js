@@ -6,7 +6,9 @@ import NotFound from "../components/notFound/NotFound";
 import PrivateRoute from "./privateRoute/PrivateRoute";
 import ProfilePage from "../pages/ProfilePage";
 import VerifyEmailPage from "../pages/VerifyEmailPage";
-
+import EmailVerificationLandingPage from "../pages/EmailVerificationLandingPage";
+import ForgotPasswordPage from "../pages/ForgotPasswordPage";
+import PasswordResetLandingPage from "../pages/PasswordResetLandingPage";
 const AppRoutes = function () {
   return (
     <Router>
@@ -14,6 +16,15 @@ const AppRoutes = function () {
         <Route path="/" element={<PrivateRoute />}>
           <Route path="/profile" element={<ProfilePage />} />
         </Route>
+        <Route
+          path="/verify-email/:verificationString"
+          element={<EmailVerificationLandingPage />}
+        />
+        <Route
+          path="/reset-password/:passwordResetCode"
+          element={<PasswordResetLandingPage />}
+        />
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/verify-email" element={<VerifyEmailPage />} />
