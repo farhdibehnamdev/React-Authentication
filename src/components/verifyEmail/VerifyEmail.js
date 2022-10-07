@@ -17,7 +17,7 @@ const VerifyEmail = function () {
     >
       <Card title="Email Verification">
         <Typography variant="h2" gutterBottom>
-          Thanks for verifying your email.
+          Please go to your email and verifying your email.
         </Typography>
       </Card>
     </Grid>
