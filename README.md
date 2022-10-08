@@ -1,70 +1,55 @@
-# Getting Started with Create React App
+# Project Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Many web applications are a mix of public and private pages. Public pages are available to anyone, while a private page requires a user login.
+this app will make authentication part in your app.
 
-## Available Scripts
+# Demo Link
 
-In the project directory, you can run:
+[License](https://breakdance.github.io/breakdance/)
 
-### `npm start`
+## Table of Content
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- [About The App](#AboutTheApp)
+- [Screenshots](#Screenshots)
+- [Technologies](#Technologies)
+- [Setup](#Setup)
+- [Approach](#Approach)
+- [Status](#Status)
+- [Resourses](#Resourses)
+- [License](https://breakdance.github.io/breakdance/)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# About The App
 
-### `npm test`
+[React Authentication]
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Many web applications are a mix of public and private pages. Public pages are available to anyone, while a private page requires a user login. You can use authentication to manage which users have access to which pages. Your React application will need to handle situations where a user tries to access a private page before they are logged in, and you will need to save the login information once they have successfully authenticated.
 
-### `npm run build`
+# Technologies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    - Material UI
+    - React Hooks
+    - React Router
+    - Json Web Token
+    - express js(backend)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Approach
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+I adopted the BEM naming style for my css class names and ...
 
-### `npm run eject`
+# Status
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- [React Authentication] For this version, I used email verification.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [React Authentication by SMS verification] Sms verification will coming soon...
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+# Resourses
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+List of Resources:
 
-## Learn More
+- [React Documentation](https://reactjs.org/docs/getting-started.html)
+- [What is JWT](https://jwt.io/introduction)
+- [React hooks](https://www.freecodecamp.org/news/introduction-to-react-hooks/)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT license.
