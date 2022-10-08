@@ -13,7 +13,6 @@ this app will make authentication part in your app.
 - [Screenshots](#Screenshots)
 - [Technologies](#Technologies)
 - [Setup](#Setup)
-- [Approach](#Approach)
 - [Status](#Status)
 - [Resourses](#Resourses)
 - [License](https://breakdance.github.io/breakdance/)
@@ -24,17 +23,33 @@ this app will make authentication part in your app.
 
 Many web applications are a mix of public and private pages. Public pages are available to anyone, while a private page requires a user login. You can use authentication to manage which users have access to which pages. Your React application will need to handle situations where a user tries to access a private page before they are logged in, and you will need to save the login information once they have successfully authenticated.
 
+# Screenshots
+
+    - [Sign In](./signin.png)
+    - [Sign Up](./signup.png)
+    - [Update profile](./Update-profile.png)
+    - [Reset Password](./reset-password.png)
+    - [forgotpassword](./forgotpassword.png)
+
 # Technologies
 
     - Material UI
     - React Hooks
     - React Router
     - Json Web Token
+    - Sendinblue (to send email verification)
     - express js(backend)
 
-# Approach
+# Setup
 
-I adopted the BEM naming style for my css class names and ...
+This project created from two parts backend and frontend both of them are in one repository.
+for both of them you must use npm i to install all packages.
+
+backend : - npm i - get a new key from sendinblue website to working email verification. - add your sender email and key in .env file - add new key in .env file - npm run dev
+
+frontend :
+
+- download or clone the repository - use npm i to install all packages. - npm start
 
 # Status
 
