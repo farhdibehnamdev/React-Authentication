@@ -1,4 +1,4 @@
-# Project Title
+# React Authentication
 
 Many web applications are a mix of public and private pages. Public pages are available to anyone, while a private page requires a user login.
 this app will make authentication part in your app.
