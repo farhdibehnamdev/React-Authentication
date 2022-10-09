@@ -1,6 +1,7 @@
 import { ThemeProvider } from "@emotion/react";
 import { createTheme, CssBaseline, Box } from "@mui/material";
 import AppRoutes from "./routes/Routes";
+import boxStyle from "./App.style";
 const theme = createTheme({
   palette: {
     background: {
@@ -21,14 +22,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Box
-        sx={{
-          display: "flex",
-          flexDirection: "column",
-          height: "100vh",
-          justifyContent: "center",
-        }}
-      >
+      <Box sx={boxStyle}>
         <AppRoutes />
       </Box>
     </ThemeProvider>
