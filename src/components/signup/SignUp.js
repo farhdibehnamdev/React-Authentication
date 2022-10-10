@@ -7,17 +7,15 @@ import { toast } from "react-toastify";
 import Card from "../card/Card";
 import HowToRegIcon from "@mui/icons-material/HowToReg";
 import LoginIcon from "@mui/icons-material/Login";
-
+import { BASE_URL } from "../../config/axios";
 const SignUp = function () {
   const [, setToken] = useToken();
-  const [errorMessage, setErrorMessage] = useState("");
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
   const navigate = useNavigate();
   const signupHandler = async function () {
-    axios.defaults.baseURL = "http://localhost:8080";
-    const response = await axios.post("/api/signup", {
+    const response = await axios.post(`${BASE_URL}/api/signup`, {
       email: emailValue,
       password: passwordValue,
     });

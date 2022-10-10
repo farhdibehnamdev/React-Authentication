@@ -6,7 +6,7 @@ import useToken from "../../hooks/useToken";
 import useUser from "../../hooks/useUser";
 import Card from "../card/Card";
 import { toast, ToastContainer } from "react-toastify";
-
+import { BASE_URL } from "../../config/axios";
 const Profile = function () {
   const [token, setToken] = useToken();
   const user = useUser();
@@ -29,7 +29,7 @@ const Profile = function () {
   const saveChangesHandler = async function () {
     try {
       const response = await axios.put(
-        `http://localhost:8080/api/users/${id}`,
+        `${BASE_URL}/api/users/${id}`,
         {
           firstName: firstNameValue,
           lastName: lastNameValue,

@@ -5,18 +5,22 @@ import PasswordResetSuccess from "../passwordResetSuccess/PasswordResetSuccess";
 import PasswordResetFail from "../passwordResetFail/PasswordResetFail";
 import { Button, Grid, TextField } from "@mui/material";
 import Card from "../card/Card";
+import { BASE_URL } from "../../config/axios";
 const PasswordResetLanding = function () {
   const [isSuccess, setIsSuccess] = useState(false);
   const [isFailure, setIsFailure] = useState(false);
   const [passwordValue, setPasswordValue] = useState("");
   const [confirmPasswordValue, setConfirmPasswordValue] = useState("");
   const { passwordResetCode } = useParams();
-  axios.defaults.baseURL = "http://localhost:8080";
+
   const resetPasswordHandler = async function () {
     try {
-      await axios.put(`/api/users/${passwordResetCode}/reset-password`, {
-        newPassword: passwordValue,
-      });
+      await axios.put(
+        `${BASE_URL}/api/users/${passwordResetCode}/reset-password`,
+        {
+          newPassword: passwordValue,
+        }
+      );
       setIsSuccess(true);
     } catch (e) {
       setIsFailure(true);

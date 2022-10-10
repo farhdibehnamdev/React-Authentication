@@ -9,15 +9,16 @@ import LockResetIcon from "@mui/icons-material/LockReset";
 import axios from "axios";
 import useToken from "../../hooks/useToken";
 import "react-toastify/dist/ReactToastify.css";
+import { BASE_URL } from "../../config/axios";
+
 const SignIn = function () {
-  const [token, setToken] = useToken();
-  const [errorMessage, setErrorMessage] = useState("");
+  const [, setToken] = useToken();
   const [emailValue, setEmailValue] = useState("");
   const [passwordValue, setPasswordValue] = useState("");
   const navigate = useNavigate();
   const loginHandler = async function () {
     try {
-      const response = await axios.post("http://localhost:8080/api/signin", {
+      const response = await axios.post(`${BASE_URL}/api/signin`, {
         email: emailValue,
         password: passwordValue,
       });
