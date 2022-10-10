@@ -1,5 +1,5 @@
-import Profile from "../components/profile/Profile";
-const ProfilePage = function () {
-  return <Profile />;
+import EditProfile from "../components/editProfile/EditProfile";
+const EditProfilePage = function () {
+  return <EditProfile />;
 };
-export default ProfilePage;
+export default EditProfilePage;
