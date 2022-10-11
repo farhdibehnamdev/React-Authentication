@@ -1,1 +1,1 @@
-export const BASE_URL = "https://reactauth.onrender.com";
+export const BASE_URL = "https://reactauth-api.onrender.com";
